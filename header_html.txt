@@ -1,0 +1,33 @@
+<!-- Top Utility Header (Desktop/Mobile) -->
+      <header class="top-header">
+        <div class="page-title-area">
+          <button class="hamburger-btn" id="hamburger-btn" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+          <h2 id="current-page-title" class="page-title">Dashboard</h2>
+        </div>
+
+        <div class="top-header-actions">
+          <!-- Streak Indicator -->
+          <div class="streak-indicator" id="streak-indicator" title="Your Daily Streak">
+            <span class="streak-icon">🔥</span>
+            <span class="streak-count" id="streak-count">0</span>
+          </div>
+
+          <!-- XP Counter -->
+          <div class="xp-pill" id="xp-pill" title="Total Experience Points">
+            <span class="xp-label">XP</span>
+            <span class="xp-value" id="xp-value">0</span>
+          </div>
+
+          <!-- Theme Toggle Mobile -->
+          <button class="icon-btn theme-toggle-btn-mobile" id="theme-toggle-mobile" aria-label="Toggle Theme">
+            🌙
+          </button>
+
+          <!-- Log Out Mobile -->
+          <button class="icon-btn" id="logout-mobile" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #ef4444; border-radius: var(--border-radius-round); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 14px;" aria-label="Log Out" title="Log Out">
+            🚪
+          </button>
+        </div>
+      </header>

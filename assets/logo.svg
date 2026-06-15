@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" fill="currentColor">
+  <!-- Graduation cap sitting on top of the L -->
+  <polygon points="22,6 4,16 22,26 40,16" opacity="0.9"/>
+  <rect x="10" y="16" width="24" height="3" rx="1" opacity="0.5"/>
+  <line x1="36" y1="13" x2="42" y2="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="42" cy="24" r="2.2" opacity="0.7"/>
+
+  <!-- L -->
+  <text x="0" y="60" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="currentColor">L</text>
+  
+  <!-- eve -->
+  <text x="30" y="60" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="currentColor">eve</text>
+  
+  <!-- Arrow replacing the l stem (going upward) -->
+  <g transform="translate(131, 4)">
+    <polygon points="7,0 0,12 4.5,12 4.5,56 9.5,56 9.5,12 14,12"/>
+  </g>
+  
+  <!-- d -->
+  <text x="148" y="60" font-family="'Outfit','Helvetica Neue',Arial,sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="currentColor">d</text>
+</svg>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Leveld | The AI-Powered Student Operating System</title>
+  <meta name="description" content="Leveld is an AI-powered student operating system helping ambitious students discover opportunities, build profiles, collaborate, and achieve academic goals.">
+  
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error("Global Error Caught: ", e);
+      const div = document.createElement('div');
+      div.id = 'debug-error-console';
+      div.style.position = 'fixed';
+      div.style.top = '20px';
+      div.style.left = '20px';
+      div.style.right = '20px';
+      div.style.padding = '24px';
+      div.style.background = '#7f1d1d';
+      div.style.color = '#fecaca';
+      div.style.border = '2px solid #ef4444';
+      div.style.borderRadius = '12px';
+      div.style.zIndex = '999999';
+      div.style.fontFamily = 'monospace';
+      div.style.whiteSpace = 'pre-wrap';
+      div.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.5)';
+      div.innerText = '⚠️ JavaScript Runtime Error:\n\n' + e.message + '\n\nLocation: ' + e.filename + ' [Line ' + e.lineno + ', Col ' + e.colno + ']\n\nStack Trace:\n' + (e.error ? e.error.stack : 'No stack trace available');
+      document.body.appendChild(div);
+    });
+  </script>
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="index.css?v=16">
+</head>
+<body>
+  <div class="animated-bg">
+    <div class="floating-icon icon-1">📚</div>
+    <div class="floating-icon icon-2">🎓</div>
+    <div class="floating-icon icon-3">💡</div>
+    <div class="floating-icon icon-4">✍️</div>
+    <div class="floating-icon icon-5">🌟</div>
+    <div class="floating-icon icon-6">🎯</div>
+    <div class="floating-icon icon-7">📈</div>
+    <div class="floating-icon icon-8">💻</div>
+  </div>
+  <!-- Screen-Reader Only Main Heading for SEO -->
+  <h1 class="sr-only">Leveld - AI-Powered Student Operating System</h1>
+
+  <!-- Background Ambient Glows -->
+  <div class="ambient-glow glow-1" id="glow-1"></div>
+  <div class="ambient-glow glow-2" id="glow-2"></div>
+
+  <!-- Landing Page Layout -->
+  <div class="landing-layout" id="landing-layout" style="display: none;">
+    <!-- Rendered dynamically -->
+  </div>
+
+  <!-- Main Grid App Layout -->
+  <div class="app-layout" id="app-layout" style="display: none;">
+    <!-- Sidebar Navigation (Desktop) -->
+          <!-- Dynamic Island Navigation -->
+      <nav class="dynamic-island" id="dynamic-island">
+        <a href="#dashboard" class="di-logo" style="text-decoration: none;">
+          <div class="di-logo-icon">
+            <svg viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%; padding: 2px; box-sizing: border-box;">
+              <!-- Wide flat mortarboard cap board -->
+              <polygon points="4,33 45,17 88,29 45,43" fill="currentColor"/>
+              <!-- Cap quadrant ridge lines -->
+              <line x1="4" y1="33" x2="88" y2="29" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+              <line x1="45" y1="17" x2="45" y2="43" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+              <!-- Cap top button/knob -->
+              <polygon points="45,10 51,15 45,20 39,15" fill="currentColor"/>
+              <!-- Cap collar connecting to L stem -->
+              <rect x="38" y="41" width="14" height="9" fill="currentColor"/>
+              <!-- L vertical stem (thick, filled) -->
+              <rect x="34" y="38" width="20" height="65" fill="currentColor"/>
+              <!-- L horizontal foot -->
+              <rect x="34" y="89" width="46" height="14" fill="currentColor"/>
+              <!-- Tassel cord from right corner of cap -->
+              <line x1="84" y1="29" x2="84" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <!-- Tassel bead/knot -->
+              <circle cx="84" cy="53" r="4" fill="currentColor"/>
+              <!-- Tassel fan/bunch -->
+              <polygon points="78,58 90,58 87,70 81,70" fill="currentColor"/>
+            </svg>
+          </div>
+        </a>
+        
+        <div class="di-links">
+          <a href="#extracurriculars" class="di-link nav-link" data-page="extracurriculars">Extracurriculars</a>
+          <a href="#portfolio" class="di-link nav-link" data-page="portfolio">Portfolio</a>
+          <a href="#roadmap" class="di-link nav-link" data-page="roadmap">Roadmap</a>
+          
+          <div class="di-dropdown">
+            <button class="di-dropdown-btn">More <span style="font-size: 8px; margin-left: 2px;">▼</span></button>
+            <div class="di-dropdown-content">
+              <a href="#calendar" class="di-dropdown-link nav-link" data-page="calendar"><span class="nav-icon">📅</span> Calendar</a>
+              <a href="#essay" class="di-dropdown-link nav-link" data-page="essay"><span class="nav-icon">✍️</span> Essay Studio</a>
+              <a href="#notes" class="di-dropdown-link nav-link" data-page="notes"><span class="nav-icon">📝</span> Notes</a>
+              <a href="#jobs" class="di-dropdown-link nav-link" data-page="jobs"><span class="nav-icon">🔍</span> Job Search</a>
+              <a href="#admissions" class="di-dropdown-link nav-link" data-page="admissions"><span class="nav-icon">🎓</span> Admissions Calc</a>
+              <a href="#pricing" class="di-dropdown-link nav-link" data-page="pricing"><span class="nav-icon">⭐</span> Upgrade Pro</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="di-actions">
+          <button class="di-icon-btn" id="profile-peek" aria-label="Profile" title="Profile">
+            <span style="font-size: 14px;">👤</span>
+          </button>
+          <button class="di-icon-btn" id="logout-desktop" aria-label="Log Out" title="Log Out">
+            🚪
+          </button>
+        </div>
+      </nav>
+
+      <!-- Global Theme Toggle (Desktop) -->
+      <button class="dynamic-island" id="theme-toggle-desktop" style="left: calc(50% + 360px); cursor: pointer; border: none; font-size: 16px; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; color: white; transition: background 0.3s;" aria-label="Toggle Global Dark Mode" title="Toggle Dark Mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+
+
+
+
+    <!-- Main Content Panel -->
+    <main class="main-panel" id="main-panel">
+      <!-- Top Utility Header (Desktop/Mobile) -->
+      <header class="top-header">
+        <div class="page-title-area">
+          
+          <h2 id="current-page-title" class="page-title">Dashboard</h2>
+        </div>
+
+        <div class="top-header-actions">
+          <!-- Streak Indicator -->
+          <div class="streak-indicator" id="streak-indicator" title="Your Daily Streak">
+            <span class="streak-icon">🔥</span>
+            <span class="streak-count" id="streak-count">0</span>
+          </div>
+
+          <!-- XP Counter -->
+          <div class="xp-pill" id="xp-pill" title="Total Experience Points">
+            <span class="xp-label">XP</span>
+            <span class="xp-value" id="xp-value">0</span>
+          </div>
+
+          <!-- Theme Toggle Mobile -->
+          <button class="icon-btn theme-toggle-btn-mobile" id="theme-toggle-mobile" aria-label="Toggle Theme">
+            🌙
+          </button>
+
+          <!-- Log Out Mobile -->
+          <button class="icon-btn" id="logout-mobile" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #ef4444; border-radius: var(--border-radius-round); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 14px;" aria-label="Log Out" title="Log Out">
+            🚪
+          </button>
+        </div>
+      </header>
+      
+
+      <!-- Slide-out Navigation Menu -->
+      <div class="slide-menu-overlay" id="slide-menu-overlay"></div>
+      <div class="slide-menu" id="slide-menu">
+        <div class="slide-menu-header">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: white; padding: 4px; box-sizing: border-box;">
+              <svg viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                <!-- Wide flat mortarboard cap board -->
+                <polygon points="4,33 45,17 88,29 45,43" fill="currentColor"/>
+                <!-- Cap quadrant ridge lines -->
+                <line x1="4" y1="33" x2="88" y2="29" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+                <line x1="45" y1="17" x2="45" y2="43" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+                <!-- Cap top button/knob -->
+                <polygon points="45,10 51,15 45,20 39,15" fill="currentColor"/>
+                <!-- Cap collar connecting to L stem -->
+                <rect x="38" y="41" width="14" height="9" fill="currentColor"/>
+                <!-- L vertical stem (thick, filled) -->
+                <rect x="34" y="38" width="20" height="65" fill="currentColor"/>
+                <!-- L horizontal foot -->
+                <rect x="34" y="89" width="46" height="14" fill="currentColor"/>
+                <!-- Tassel cord from right corner of cap -->
+                <line x1="84" y1="29" x2="84" y2="57" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <!-- Tassel bead/knot -->
+                <circle cx="84" cy="62" r="5" fill="currentColor"/>
+                <!-- Tassel fan/bunch -->
+                <polygon points="76,68 92,68 88,86 80,86" fill="currentColor"/>
+              </svg>
+            </div>
+            <span style="font-family: var(--font-heading); font-weight: 800; font-size: 16px;">Leveld</span>
+          </div>
+          <button class="slide-menu-close" id="slide-menu-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="slide-menu-nav">
+          <a href="#dashboard" class="slide-menu-link" data-page="dashboard"><span class="nav-icon">📊</span> Dashboard</a>
+          <a href="#roadmap" class="slide-menu-link" data-page="roadmap"><span class="nav-icon">🗺️</span> Roadmap</a>
+          <a href="#calendar" class="slide-menu-link" data-page="calendar"><span class="nav-icon">📅</span> Calendar</a>
+          <a href="#extracurriculars" class="slide-menu-link" data-page="extracurriculars"><span class="nav-icon">💡</span> Extracurriculars</a>
+          <a href="#portfolio" class="slide-menu-link" data-page="portfolio"><span class="nav-icon">💼</span> Portfolio</a>
+          <a href="#essay" class="slide-menu-link" data-page="essay"><span class="nav-icon">✍️</span> Essay Studio</a>
+          <a href="#notes" class="slide-menu-link" data-page="notes"><span class="nav-icon">📝</span> Notes</a>
+          <a href="#jobs" class="slide-menu-link" data-page="jobs"><span class="nav-icon">🔍</span> Job Search</a>
+          <a href="#admissions" class="slide-menu-link" data-page="admissions"><span class="nav-icon">🎓</span> Admissions Calc <span style="font-size: 9px; font-weight: 800; color: var(--secondary); background: rgba(6,182,212,0.15); padding: 1px 5px; border-radius: 3px; margin-left: 4px; text-transform: uppercase;">Beta</span></a>
+          <div style="border-top: 1px solid var(--border-color); margin: 8px 0;"></div>
+          <a href="#pricing" class="slide-menu-link" data-page="pricing"><span class="nav-icon">⭐</span> Upgrade Pro</a>
+        </nav>
+
+
+      </div>
+
+      <!-- View Containers (Single Page Sections) -->
+      <div class="content-container">
+        <!-- Dashboard View -->
+        <section id="view-dashboard" class="app-view active-view" aria-labelledby="current-page-title">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Roadmap View -->
+        <section id="view-roadmap" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Profile View -->
+        <section id="view-profile" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Calendar View -->
+        <section id="view-calendar" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Extracurriculars View -->
+        <section id="view-extracurriculars" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+
+
+        <!-- Portfolio View -->
+        <section id="view-portfolio" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Essay View -->
+        <section id="view-essay" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Notes View -->
+        <section id="view-notes" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Jobs View -->
+        <section id="view-jobs" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Admissions Calculator View -->
+        <section id="view-admissions" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+
+        <!-- Pricing View -->
+        <section id="view-pricing" class="app-view" style="display: none;">
+          <!-- Dynamically Injected -->
+        </section>
+      </div>
+    </main>
+
+    <!-- Bottom Navigation Bar (Mobile View) -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <a href="#dashboard" class="bottom-nav-link active" id="nav-mobile-dashboard">
+        <span class="nav-icon">📊</span>
+        <span class="bottom-nav-label">Dash</span>
+      </a>
+      <a href="#roadmap" class="bottom-nav-link" id="nav-mobile-roadmap">
+        <span class="nav-icon">🗺️</span>
+        <span class="bottom-nav-label">Road</span>
+      </a>
+      <a href="#extracurriculars" class="bottom-nav-link" id="nav-mobile-extracurriculars">
+        <span class="nav-icon">💡</span>
+        <span class="bottom-nav-label">Extra</span>
+      </a>
+
+      <a href="#portfolio" class="bottom-nav-link" id="nav-mobile-portfolio">
+        <span class="nav-icon">💼</span>
+        <span class="bottom-nav-label">Profile</span>
+      </a>
+      <a href="#jobs" class="bottom-nav-link" id="nav-mobile-jobs" style="display: none;">
+        <span class="nav-icon">🔍</span>
+        <span class="bottom-nav-label">Jobs</span>
+      </a>
+      <button class="bottom-nav-link mentor-trigger-mobile" id="mentor-trigger-mobile" aria-label="Open AI Mentor">
+        <span class="nav-icon">🤖</span>
+        <span class="bottom-nav-label">Mentor</span>
+      </button>
+    </nav>
+
+
+  </div>
+
+  <!-- Onboarding Layout (Hidden once registered) -->
+  <div class="onboarding-layout" id="onboarding-layout">
+    <!-- Embedded multi-step form gets injected here -->
+  </div>
+
+  <!-- AI Mentor Floating Sidebar (Desktop Overlay / Panel) -->
+  <div class="ai-mentor-panel" id="ai-mentor-panel">
+    <!-- Dynamically Injected -->
+  </div>
+
+  <!-- XP Earned & Level Up Modals/Notifiers -->
+  <div class="xp-toast-container" id="xp-toast-container"></div>
+  <div class="modal-overlay" id="modal-overlay" style="display: none;">
+    <div class="modal" id="app-modal">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div class="modal-content" id="modal-body"></div>
+    </div>
+  </div>
+
+  <img src="/delay_load.png?delay=true" style="display:none;">
+  <!-- Entrypoint Javascript Module -->
+  <script type="module" src="app.js?v=18"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leveld | Counselor Dashboard</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="counselor.css">
+</head>
+<body>
+  <!-- Ambient Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Layout Container -->
+  <div class="counselor-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <div class="logo-icon" style="padding: 5px; box-sizing: border-box;">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width: 100%; height: 100%;">
+            <path d="M 14 12.5 L 14 25.5 L 23 25.5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <polygon points="8.5,8 16,4.5 22.5,7 15,10.5" fill="currentColor" stroke="none" />
+            <path d="M 11.5,9.3 Q 14.5,12.5 17.5,9.3 Z" fill="currentColor" stroke="none" />
+            <path d="M 15,7.5 Q 20.5,8 20.5,12" stroke-width="0.8" stroke-linecap="round" />
+            <circle cx="20.5" cy="13" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <span class="logo-text">Leveld<span class="logo-tag">Portal</span></span>
+      </div>
+
+      <!-- School Selector -->
+      <div class="school-selector-container">
+        <label class="label-sm" for="school-select">Select School</label>
+        <select id="school-select" class="school-dropdown">
+          <!-- Populated dynamically -->
+          <option value="">Loading schools...</option>
+        </select>
+      </div>
+
+      <!-- Navigation links (Static for layout) -->
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-link active">
+          <span>👥</span> <span>Student Roster</span>
+        </a>
+        <a href="#" class="nav-link">
+          <span>📈</span> <span>School Analytics</span>
+        </a>
+        <a href="#" class="nav-link">
+          <span>⚙️</span> <span>Portal Settings</span>
+        </a>
+      </nav>
+
+      <!-- Footer Theme Toggle -->
+      <div class="sidebar-footer">
+        <button id="theme-toggle" class="btn-toggle">
+          <span>🌙</span> <span id="theme-label">Dark Mode</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-panel">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="title-area">
+          <h2>Student Roster</h2>
+          <p id="school-subtitle">Select a school to view individual student progress</p>
+        </div>
+        <div class="advisor-info" style="display: flex; align-items: center; gap: 12px;">
+          <div class="badge badge-blue">Advisor Access</div>
+        </div>
+      </header>
+
+      <!-- Metric Cards Grid -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-title">Total Students</span>
+          <span id="metric-total-students" class="metric-value">0</span>
+          <span class="metric-footer">Registered in system</span>
+        </div>
+        <div class="metric-card success">
+          <span class="metric-title">Average Level</span>
+          <span id="metric-avg-level" class="metric-value">0.0</span>
+          <span class="metric-footer">Gamified progress</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-title">Average XP</span>
+          <span id="metric-avg-xp" class="metric-value">0</span>
+          <span class="metric-footer">Total effort points</span>
+        </div>
+        <div class="metric-card warning">
+          <span class="metric-title">Active Streaks</span>
+          <span id="metric-avg-streak" class="metric-value">0</span>
+          <span class="metric-footer">Avg. consecutive days</span>
+        </div>
+      </section>
+
+      <!-- Search and Filter Controls -->
+      <section class="controls-row">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search by name, skill, interest, or career goal...">
+        </div>
+        
+        <select id="filter-grade" class="filter-dropdown">
+          <option value="">All Grades</option>
+          <option value="9">9th Grade</option>
+          <option value="10">10th Grade</option>
+          <option value="11">11th Grade</option>
+          <option value="12">12th Grade</option>
+        </select>
+        
+        <select id="filter-status" class="filter-dropdown">
+          <option value="">All Career Paths</option>
+          <!-- Populated dynamically -->
+        </select>
+      </section>
+
+      <!-- Student Roster Table -->
+      <section class="content-card">
+        <div class="table-responsive">
+          <table class="students-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Grade</th>
+                <th>Level</th>
+                <th>XP</th>
+                <th>Streak</th>
+                <th>Career Goals</th>
+                <th>Dream School</th>
+              </tr>
+            </thead>
+            <tbody id="student-table-body">
+              <!-- Roster rows populated dynamically -->
+              <tr>
+                <td colspan="7">
+                  <div class="empty-state">
+                    <span class="empty-icon">📂</span>
+                    <p>Loading students list...</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Student Inspector Side Drawer Backdrop -->
+  <div id="inspector-backdrop" class="inspector-backdrop"></div>
+
+  <!-- Student Inspector Side Drawer -->
+  <div id="student-inspector" class="student-inspector">
+    
+    <!-- Inspector Header -->
+    <header class="inspector-header">
+      <div class="inspector-profile-info">
+        <div id="inspector-avatar" class="inspector-avatar">XP</div>
+        <div>
+          <h3 id="inspector-name" class="inspector-name">Loading...</h3>
+          <p id="inspector-school-grade" class="inspector-sub">Lincoln High • Grade 10</p>
+        </div>
+      </div>
+      <button id="close-inspector" class="close-btn" aria-label="Close Inspector">&times;</button>
+      
+      <!-- Tiny statistics under profile -->
+      <div class="inspector-pills">
+        <div class="inspector-pill">
+          <span class="pill-label">Level</span>
+          <span id="inspector-level" class="pill-val">1</span>
+        </div>
+        <div class="inspector-pill">
+          <span class="pill-label">XP</span>
+          <span id="inspector-xp" class="pill-val">1200</span>
+        </div>
+        <div class="inspector-pill">
+          <span class="pill-label">Streak</span>
+          <span id="inspector-streak" class="pill-val">3 🔥</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Selection Triggers -->
+    <nav class="tabs-header">
+      <button class="tab-trigger active" data-tab="tab-profile">Profile</button>
+      <button class="tab-trigger" data-tab="tab-projects">Projects</button>
+      <button class="tab-trigger" data-tab="tab-essays">Essays</button>
+      <button class="tab-trigger" data-tab="tab-mentor">AI Mentor</button>
+    </nav>
+
+    <!-- Tabs Content Container -->
+    <div class="tabs-content">
+      
+      <!-- Tab 1: Profile & Academics -->
+      <div id="tab-profile" class="tab-pane active">
+        
+        <div class="info-section">
+          <h4 class="info-section-title">Academic Details</h4>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-label">Career Goal</span>
+              <span id="insp-career" class="info-val">Not specified</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Dream University</span>
+              <span id="insp-universities" class="info-val">Not specified</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h4 class="info-section-title">Academic Strengths</h4>
+          <div id="insp-strengths" class="tag-container">
+            <!-- Strengths tags -->
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h4 class="info-section-title">Interests & Hobbies</h4>
+          <div id="insp-interests" class="tag-container">
+            <!-- Interests tags -->
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h4 class="info-section-title">Key Skills</h4>
+          <div id="insp-skills" class="tag-container">
+            <!-- Skills tags -->
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Tab 2: Projects & Achievements -->
+      <div id="tab-projects" class="tab-pane">
+        <!-- Project list populated dynamically -->
+        <div id="insp-projects-list" style="display: flex; flex-direction: column; gap: 20px;">
+          <p class="empty-state">No projects started yet.</p>
+        </div>
+      </div>
+
+      <!-- Tab 3: Essay Studio -->
+      <div id="tab-essays" class="tab-pane">
+        <!-- Essay list populated dynamically -->
+        <div id="insp-essays-list" style="display: flex; flex-direction: column; gap: 20px;">
+          <p class="empty-state">No essays submitted to Essay Studio yet.</p>
+        </div>
+      </div>
+
+      <!-- Tab 4: AI Mentor Logs -->
+      <div id="tab-mentor" class="tab-pane">
+        <h4 class="info-section-title" style="margin-bottom: 12px;">AI Advisor Consultation History</h4>
+        <!-- Chat logs container -->
+        <div id="insp-chat-log" class="chat-container">
+          <p class="empty-state">No chat log history with AI Mentor found.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Client JavaScript Logic -->
+  <script type="module" src="counselor.js"></script>
+</body>
+</html>
