@@ -206,8 +206,13 @@ export const Dashboard = {
                       subTextFormatted = `Upcoming • ${m.category || 'Next'}`;
                     }
 
+                    const isRealEvent = m.id !== 'onboarding-setup' && m.id !== 'next-goal';
+                    const clickableClass = isRealEvent ? 'class="roadmap-step-clickable"' : '';
+                    const cursorStyle = isRealEvent ? 'cursor: pointer;' : 'cursor: default;';
+                    const hoverTransform = isRealEvent ? 'transition: transform 0.2s;' : '';
+
                     return `
-                      <div class="roadmap-step-clickable" data-id="${m.id}" data-type="${m.category}" data-title="${m.title}" style="flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 2; cursor: pointer; transition: transform 0.2s;">
+                      <div ${clickableClass} data-id="${m.id}" data-type="${m.category}" data-title="${m.title}" style="flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center; text-align: center; z-index: 2; ${cursorStyle} ${hoverTransform}">
                         <!-- Timeline Node -->
                         <div style="width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; ${nodeStyle}"></div>
                         

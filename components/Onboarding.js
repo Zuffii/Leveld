@@ -112,7 +112,15 @@ export const Onboarding = {
     if (!container) return;
 
     container.innerHTML = `
-      <div class="glass-card onboarding-card" style="animation: view-enter 0.5s ease; max-width: 650px; width: 100%; margin: 40px auto; padding: 32px;">
+      <!-- Floating watermarks for Onboarding Background -->
+      <div class="floating-deco deco-1" style="position: absolute; top: 12%; left: 8%; opacity: 0.08; font-size: 44px; animation: float-slow 7s infinite ease-in-out; pointer-events: none; z-index: 0;">📚</div>
+      <div class="floating-deco deco-2" style="position: absolute; top: 22%; right: 10%; opacity: 0.08; font-size: 38px; animation: float-fast 5s infinite ease-in-out; pointer-events: none; z-index: 0;">💻</div>
+      <div class="floating-deco deco-3" style="position: absolute; bottom: 25%; left: 12%; opacity: 0.08; font-size: 48px; animation: float-spin 8s infinite ease-in-out; pointer-events: none; z-index: 0;">🎓</div>
+      <div class="floating-deco deco-4" style="position: absolute; bottom: 15%; right: 14%; opacity: 0.08; font-size: 40px; animation: float-slow 6s infinite ease-in-out; pointer-events: none; z-index: 0;">📝</div>
+      <div class="floating-deco deco-5" style="position: absolute; top: 50%; left: 5%; opacity: 0.08; font-size: 32px; animation: float-fast 6s infinite ease-in-out; pointer-events: none; z-index: 0;">⚡</div>
+      <div class="floating-deco deco-6" style="position: absolute; top: 60%; right: 6%; opacity: 0.08; font-size: 42px; animation: float-spin 7s infinite ease-in-out; pointer-events: none; z-index: 0;">💡</div>
+
+      <div class="glass-card onboarding-card" style="animation: view-enter 0.5s ease; max-width: 650px; width: 100%; margin: 40px auto; padding: 32px; position: relative; z-index: 10;">
         <div class="logo-container" style="justify-content: center; padding-bottom: 24px;">
           <div class="logo-icon" style="padding: 5px; box-sizing: border-box;">
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" style="width: 100%; height: 100%;">
