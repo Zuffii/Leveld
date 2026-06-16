@@ -1,3 +1,8 @@
+begin
+  require 'bundler/setup'
+rescue LoadError
+  # Fallback if bundler is not installed/used
+end
 require 'webrick'
 require 'json'
 require 'fileutils'
