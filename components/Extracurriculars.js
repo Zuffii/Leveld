@@ -1902,6 +1902,10 @@ export const Extracurriculars = {
             <label class="form-label" for="evidence-url" id="lbl-evidence-url" style="font-size: 12px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Resource URL / Link</label>
             <input type="text" id="evidence-url" class="form-control" placeholder="E.g., https://github.com/username/project" required style="font-size: 13.5px;">
           </div>
+          <div class="form-group" style="margin-top: 12px;">
+            <label class="form-label" for="evidence-file" style="font-size: 12px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Or Upload Proof File (PDF, Image, Docs)</label>
+            <input type="file" id="evidence-file" class="form-control" style="font-size: 12px; padding: 8px;" accept="image/*,application/pdf,.doc,.docx,.txt,text/plain">
+          </div>
 
           <div class="form-group">
             <label class="form-label" for="evidence-description" style="font-size: 12px; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Description / Notes</label>
@@ -1944,13 +1948,44 @@ export const Extracurriculars = {
       };
     }
 
+    const fileInput = document.getElementById('evidence-file');
+    if (fileInput && urlInput) {
+      fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+          urlInput.removeAttribute('required');
+          urlInput.placeholder = "File selected for upload (URL optional)";
+          urlInput.disabled = true;
+        } else {
+          urlInput.setAttribute('required', 'true');
+          urlInput.placeholder = "E.g., https://github.com/username/project";
+          urlInput.disabled = false;
+        }
+      };
+    }
+
     const modalForm = document.getElementById('modal-evidence-form');
     if (modalForm) {
-      modalForm.onsubmit = () => {
+      modalForm.onsubmit = async () => {
         const type = typeSelect.value;
         const title = document.getElementById('evidence-title').value.trim();
-        const url = type === 'log' ? '' : urlInput.value.trim();
+        let url = type === 'log' ? '' : urlInput.value.trim();
         const description = document.getElementById('evidence-description').value.trim();
+
+        const fileInput = document.getElementById('evidence-file');
+        if (fileInput && fileInput.files && fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          try {
+            url = await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => resolve(reader.result);
+              reader.onerror = e => reject(e);
+              reader.readAsDataURL(file);
+            });
+          } catch (e) {
+            console.error("Error reading file:", e);
+            return alert("Failed to read upload file.");
+          }
+        }
 
         proj.evidenceList = proj.evidenceList || [];
         proj.evidenceList.push({

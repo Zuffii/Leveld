@@ -6,6 +6,7 @@ import { Profile } from './components/Profile.js?v=3';
 import { Calendar } from './components/Calendar.js?v=2';
 import { Extracurriculars } from './components/Extracurriculars.js?v=7';
 import { Landing } from './components/Landing.js?v=3';
+import { AISimulator } from './data/ai_simulator.js?v=3';
 
 import { Portfolio } from './components/Portfolio.js?v=5';
 import { EssayStudio } from './components/EssayStudio.js?v=2';
@@ -843,7 +844,7 @@ class App {
               <label style="display: block; font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Evidence Description</label>
               <textarea id="ev-desc" class="form-control" placeholder="What did you accomplish and what did you learn?" rows="2" required style="font-size: 13px; padding: 10px; resize: none;"></textarea>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px;">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px; margin-bottom: 12px;">
               <div>
                 <label style="display: block; font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Type</label>
                 <select id="ev-type" class="form-control" style="font-size: 13px; padding: 10px;">
@@ -856,6 +857,10 @@ class App {
                 <label style="display: block; font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">URL / File Path</label>
                 <input type="text" id="ev-url" class="form-control" placeholder="e.g., https://github.com/... or assets/project.png" required style="font-size: 13px; padding: 10px;">
               </div>
+            </div>
+            <div>
+              <label style="display: block; font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px;">Or upload proof file (PDF, Image, Docs)</label>
+              <input type="file" id="ev-file" class="form-control" style="font-size: 12px; padding: 8px;" accept="image/*,application/pdf,.doc,.docx,.txt,text/plain">
             </div>
             
             <button type="submit" class="btn btn-primary" style="margin-top: 12px; padding: 12px; font-weight: 700; border-radius: 12px; font-size: 13px; background: linear-gradient(135deg, #10b981, #059669); border: none;">✓ Complete & Add to Portfolio</button>
@@ -930,6 +935,23 @@ class App {
         };
       }
 
+      // File upload helper
+      const fileInput = document.getElementById('ev-file');
+      const urlInput = document.getElementById('ev-url');
+      if (fileInput && urlInput) {
+        fileInput.onchange = () => {
+          if (fileInput.files.length > 0) {
+            urlInput.removeAttribute('required');
+            urlInput.placeholder = "File selected for upload (URL optional)";
+            urlInput.disabled = true;
+          } else {
+            urlInput.setAttribute('required', 'true');
+            urlInput.placeholder = "e.g., https://github.com/...";
+            urlInput.disabled = false;
+          }
+        };
+      }
+
       // Go to workspace button
       const goToWorkspaceBtn = document.getElementById('btn-go-to-workspace');
       if (goToWorkspaceBtn) {
@@ -954,15 +976,32 @@ class App {
       // Evidence Submission Submit
       const evidenceForm = document.getElementById('milestone-evidence-form');
       if (evidenceForm) {
-        evidenceForm.onsubmit = (event) => {
+        evidenceForm.onsubmit = async (event) => {
           event.preventDefault();
           const evTitle = document.getElementById('ev-title').value.trim();
           const evDesc = document.getElementById('ev-desc').value.trim();
           const evType = document.getElementById('ev-type').value;
-          const evUrl = document.getElementById('ev-url').value.trim();
+          const evUrlInput = document.getElementById('ev-url');
+          let evUrl = evUrlInput.value.trim();
 
-          if (!evTitle || !evDesc || !evUrl) {
-            return alert('Please fill in all evidence fields!');
+          const fileInput = document.getElementById('ev-file');
+          if (fileInput && fileInput.files && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            try {
+              evUrl = await new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = e => reject(e);
+                reader.readAsDataURL(file);
+              });
+            } catch (e) {
+              console.error("Error reading file:", e);
+              return alert("Failed to read upload file.");
+            }
+          }
+
+          if (!evTitle || !evDesc || (!evUrl && evUrlInput.hasAttribute('required'))) {
+            return alert('Please fill in all evidence fields or select a file to upload!');
           }
 
           // 1. Create matching project if not exists
