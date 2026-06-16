@@ -666,11 +666,83 @@ export const AISimulator = {
       teammates: true
     });
 
-    if (window.LeveledApp && window.LeveledApp.state && window.LeveledApp.state.customRoadmapMilestones) {
-      milestones.push(...window.LeveledApp.state.customRoadmapMilestones);
+    // Process replaced and skipped milestones
+    const state = (window.LeveledApp && window.LeveledApp.state) ? window.LeveledApp.state : {};
+    const replaced = state.replacedMilestones || {};
+    const skipped = state.skippedMilestones || [];
+
+    // Helper to resolve steps for opportunity categories
+    function getOppSteps(category) {
+      const cat = (category || '').toLowerCase();
+      if (cat === 'olympiad') {
+        return [
+          'Review syllabus and official competitive programming guidebooks.',
+          'Solve at least 10 historical Olympiad contest questions under time limits.',
+          'Practice key data structures (trees, graphs) and dynamic programming algorithms.',
+          'Simulate a full-length contest environment and compile performance logs.'
+        ];
+      } else if (cat === 'hackathon') {
+        return [
+          'Research prior winning hackathon projects and tech stacks.',
+          'Form a collaboration team and sketch wireframe interface layouts.',
+          'Build a functional frontend and integrate API mock layers.',
+          'Record a 2-minute project demo video and write a Devpost description page.'
+        ];
+      } else if (cat === 'research') {
+        return [
+          'Conduct a comprehensive literature search on Google Scholar.',
+          'Draft a structured research abstract and outline the core methodology.',
+          'Gather and analyze primary data sets using Python or Google Sheets.',
+          'Write the final research paper draft and submit to peer-reviewed science journals.'
+        ];
+      } else if (cat === 'internship') {
+        return [
+          'Update your professional resume highlighting relevant technical skills.',
+          'Contribute to open source GitHub issues or build personal projects.',
+          'Prepare cover letters and request reference approvals.',
+          'Submit the application form and schedule practice interview questions.'
+        ];
+      } else if (cat === 'course' || cat === 'certificate') {
+        return [
+          'Enroll in the Coursera portal and access course materials.',
+          'Establish a weekly study schedule (target 4-6 hours/week).',
+          'Complete all lesson videos, quizzes, and hands-on coding labs.',
+          'Submit the final capstone project and secure your official verified certificate.'
+        ];
+      } else {
+        return [
+          'Review application eligibility criteria and deadline rules.',
+          'Write or draft the personal statements or essays.',
+          'Obtain necessary transcripts, certificates, or letters of recommendation.',
+          'Verify resource URLs and complete the online application portal.'
+        ];
+      }
     }
 
-    return milestones;
+    const processedMilestones = milestones
+      .filter(m => !skipped.includes(m.id))
+      .map(m => {
+        if (replaced[m.id]) {
+          const rep = replaced[m.id];
+          const matchedOpp = OPPORTUNITIES.find(opp => opp.name === rep.title);
+          const category = matchedOpp ? matchedOpp.category : 'Custom';
+          return {
+            ...m,
+            title: rep.title || m.title,
+            category: matchedOpp ? (matchedOpp.category.charAt(0).toUpperCase() + matchedOpp.category.slice(1)) : 'Custom',
+            description: matchedOpp ? matchedOpp.description : (rep.description || m.description),
+            steps: getOppSteps(category),
+            xpReward: matchedOpp ? (matchedOpp.rewardsXP || 500) : 500
+          };
+        }
+        return m;
+      });
+
+    if (state.customRoadmapMilestones) {
+      processedMilestones.push(...state.customRoadmapMilestones);
+    }
+
+    return processedMilestones;
   },
 
   /**

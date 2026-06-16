@@ -29,11 +29,15 @@ export const Onboarding = {
   careerCategories: {
     'Engineering & Technology': [
       'Artificial Intelligence & Software Engineering',
-      'Data Science & Analytics',
-      'Cybersecurity & Information Systems',
-      'Mechanical & Aerospace Engineering',
+      'Aerospace Engineering',
+      'Mechanical Engineering',
       'Electrical & Computer Engineering',
       'Robotics & Automation',
+      'Data Science & Analytics',
+      'Cybersecurity & Information Systems',
+      'Chemical Engineering',
+      'Civil & Environmental Engineering',
+      'Bioengineering & Biotechnology',
       'Blockchain & Web3 Development'
     ],
     'Science & Research': [

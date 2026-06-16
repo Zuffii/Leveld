@@ -5087,6 +5087,27 @@ textarea.form-control {
 [data-theme="dark"] .wm-lime    { color: rgba(163, 230, 53, 0.82) !important; }
 [data-theme="dark"] .wm-red     { color: rgba(248, 113, 113, 0.82) !important; }
 
+/* Floating Decorations for Sections */
+.floating-deco {
+  position: absolute;
+  font-size: 32px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
 
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
 
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-8deg); }
+}
 
+@keyframes float-spin {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(15deg); }
+}

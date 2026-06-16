@@ -405,6 +405,13 @@ export const Landing = {
         
         <!-- Breathtaking Hero Section -->
         <header class="premium-hero landing-hero" style="position: relative; overflow: hidden; background: transparent;">
+          <div class="floating-deco" style="top: 5%; left: 6%; animation: float-fast 6.7s infinite ease-in-out 0.3s; font-size: 35px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📎</div>
+          <div class="floating-deco" style="top: 42%; right: 8%; animation: float-slow 6.4s infinite ease-in-out 0.7s; font-size: 43px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🔭</div>
+          <div class="floating-deco" style="top: 81%; left: 3%; animation: float-spin 7.3s infinite ease-in-out 2.2s; font-size: 34px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎒</div>
+          <div class="floating-deco" style="top: 10%; right: 6%; animation: float-spin 7.7s infinite ease-in-out 2.6s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📈</div>
+          <div class="floating-deco" style="top: 52%; left: 6%; animation: float-fast 5.2s infinite ease-in-out 0.8s; font-size: 30px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">✂️</div>
+          <div class="floating-deco" style="top: 81%; right: 6%; animation: float-spin 8.8s infinite ease-in-out 1.8s; font-size: 34px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎯</div>
+
           <!-- 3D Floating Elements -->
           <div class="float-3d f3d-1">📚</div>
           <div class="float-3d f3d-2">🎓</div>
@@ -496,6 +503,13 @@ export const Landing = {
 
         <!-- Stats Bar Section (Bento Overhaul) -->
         <section class="premium-stats-section" style="position: relative; overflow: hidden; padding: 48px 24px; background: transparent;">
+          <div class="floating-deco" style="top: 8%; left: 6%; animation: float-fast 5.4s infinite ease-in-out 2.2s; font-size: 35px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">✂️</div>
+          <div class="floating-deco" style="top: 49%; right: 4%; animation: float-slow 7.5s infinite ease-in-out 3.0s; font-size: 34px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📊</div>
+          <div class="floating-deco" style="top: 83%; left: 2%; animation: float-fast 6.4s infinite ease-in-out 0.2s; font-size: 44px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📎</div>
+          <div class="floating-deco" style="top: 13%; right: 7%; animation: float-spin 5.0s infinite ease-in-out 2.9s; font-size: 40px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📐</div>
+          <div class="floating-deco" style="top: 47%; left: 6%; animation: float-spin 5.1s infinite ease-in-out 0.8s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💻</div>
+          <div class="floating-deco" style="top: 90%; right: 8%; animation: float-spin 6.3s infinite ease-in-out 1.9s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📈</div>
+
           <div class="stats-grid apple-reveal" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto;">
             
             <!-- Card 1: Students Onboarded -->
@@ -634,6 +648,13 @@ export const Landing = {
 
         <!-- App Combine Animation Section -->
         <section id="app-combine" class="app-combine-section" style="padding: 80px 24px; position: relative; background: transparent;">
+          <div class="floating-deco" style="top: 7%; left: 7%; animation: float-spin 6.6s infinite ease-in-out 0.1s; font-size: 30px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💡</div>
+          <div class="floating-deco" style="top: 46%; right: 8%; animation: float-fast 8.6s infinite ease-in-out 1.5s; font-size: 38px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📐</div>
+          <div class="floating-deco" style="top: 83%; left: 4%; animation: float-spin 6.6s infinite ease-in-out 1.8s; font-size: 30px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📚</div>
+          <div class="floating-deco" style="top: 12%; right: 2%; animation: float-slow 8.7s infinite ease-in-out 0.5s; font-size: 45px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📌</div>
+          <div class="floating-deco" style="top: 53%; left: 3%; animation: float-spin 6.1s infinite ease-in-out 1.0s; font-size: 39px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💻</div>
+          <div class="floating-deco" style="top: 82%; right: 6%; animation: float-slow 5.7s infinite ease-in-out 3.0s; font-size: 32px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🧮</div>
+
           <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
             
             <!-- Left Column: Merging Stage -->
@@ -722,6 +743,13 @@ export const Landing = {
 
         <!-- Interactive Ivy Mentor Section -->
         <section id="ivy-mentor-section" class="ivy-mentor-section" style="padding: 80px 24px; position: relative; background: transparent; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(255,255,255,0.3);">
+          <div class="floating-deco" style="top: 14%; left: 4%; animation: float-slow 6.3s infinite ease-in-out 2.9s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📚</div>
+          <div class="floating-deco" style="top: 45%; right: 8%; animation: float-fast 8.5s infinite ease-in-out 2.4s; font-size: 31px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">✂️</div>
+          <div class="floating-deco" style="top: 82%; left: 3%; animation: float-slow 8.1s infinite ease-in-out 0.8s; font-size: 35px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📊</div>
+          <div class="floating-deco" style="top: 19%; right: 6%; animation: float-spin 5.4s infinite ease-in-out 0.2s; font-size: 43px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🧮</div>
+          <div class="floating-deco" style="top: 54%; left: 4%; animation: float-spin 7.3s infinite ease-in-out 1.2s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🖊️</div>
+          <div class="floating-deco" style="top: 89%; right: 3%; animation: float-slow 8.3s infinite ease-in-out 2.9s; font-size: 40px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎓</div>
+
           <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 40px; align-items: stretch;">
             
             <!-- Left Column: Ivy Mascot Parallax Box -->
@@ -819,6 +847,13 @@ export const Landing = {
 
         <!-- Bento Grid Features Section -->
         <section id="features" style="position: relative; overflow: hidden; padding: 80px 24px; background: transparent;">
+          <div class="floating-deco" style="top: 7%; left: 8%; animation: float-slow 7.0s infinite ease-in-out 2.0s; font-size: 41px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🔬</div>
+          <div class="floating-deco" style="top: 42%; right: 4%; animation: float-spin 8.2s infinite ease-in-out 0.1s; font-size: 36px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎒</div>
+          <div class="floating-deco" style="top: 84%; left: 5%; animation: float-spin 5.8s infinite ease-in-out 0.6s; font-size: 45px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📌</div>
+          <div class="floating-deco" style="top: 14%; right: 3%; animation: float-fast 6.1s infinite ease-in-out 0.9s; font-size: 37px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📝</div>
+          <div class="floating-deco" style="top: 47%; left: 6%; animation: float-slow 6.3s infinite ease-in-out 0.1s; font-size: 36px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🧮</div>
+          <div class="floating-deco" style="top: 82%; right: 5%; animation: float-spin 7.8s infinite ease-in-out 0.5s; font-size: 42px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💡</div>
+
           <div style="text-align: center; margin-bottom: 48px;" class="apple-reveal">
             <div class="hero-badge" style="margin-bottom: 12px; background: rgba(59, 130, 246, 0.08); color: #2563eb; margin-left: auto; margin-right: auto;">
               <span>🧠</span> Features Bento
@@ -936,6 +971,13 @@ export const Landing = {
 
         <!-- Why Choose Leveld Section -->
         <section id="why-leveld" style="position: relative; overflow: hidden; padding: 80px 24px; background: transparent;">
+          <div class="floating-deco" style="top: 6%; left: 7%; animation: float-spin 7.2s infinite ease-in-out 1.5s; font-size: 33px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📈</div>
+          <div class="floating-deco" style="top: 48%; right: 7%; animation: float-spin 5.9s infinite ease-in-out 2.2s; font-size: 44px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📚</div>
+          <div class="floating-deco" style="top: 79%; left: 2%; animation: float-slow 8.2s infinite ease-in-out 0.9s; font-size: 43px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📐</div>
+          <div class="floating-deco" style="top: 16%; right: 8%; animation: float-spin 8.6s infinite ease-in-out 2.7s; font-size: 41px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💡</div>
+          <div class="floating-deco" style="top: 45%; left: 5%; animation: float-spin 7.2s infinite ease-in-out 2.9s; font-size: 30px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎯</div>
+          <div class="floating-deco" style="top: 85%; right: 8%; animation: float-fast 6.8s infinite ease-in-out 2.0s; font-size: 45px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎒</div>
+
           <div style="text-align: center; margin-bottom: 48px;" class="apple-reveal">
             <div class="hero-badge" style="margin-bottom: 12px; background: rgba(16, 185, 129, 0.08); color: #10b981; margin-left: auto; margin-right: auto;">
               <span>🎓</span> Elite Targets
@@ -1036,6 +1078,13 @@ export const Landing = {
 
         <!-- Testimonials Section -->
         <section id="landing-testimonials" style="position: relative; overflow: hidden; padding: 80px 24px; max-width: 1200px; margin: 0 auto; scroll-margin-top: 100px; background: transparent;">
+          <div class="floating-deco" style="top: 5%; left: 4%; animation: float-spin 8.3s infinite ease-in-out 2.4s; font-size: 42px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🔭</div>
+          <div class="floating-deco" style="top: 49%; right: 2%; animation: float-slow 7.7s infinite ease-in-out 1.6s; font-size: 42px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💻</div>
+          <div class="floating-deco" style="top: 84%; left: 4%; animation: float-slow 8.7s infinite ease-in-out 2.3s; font-size: 40px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎯</div>
+          <div class="floating-deco" style="top: 12%; right: 3%; animation: float-fast 7.9s infinite ease-in-out 0.6s; font-size: 39px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎒</div>
+          <div class="floating-deco" style="top: 47%; left: 5%; animation: float-spin 8.9s infinite ease-in-out 0.3s; font-size: 39px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🖊️</div>
+          <div class="floating-deco" style="top: 87%; right: 6%; animation: float-fast 6.2s infinite ease-in-out 0.6s; font-size: 31px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🏆</div>
+
           <div style="text-align: center; margin-bottom: 48px;" class="apple-reveal">
             <div class="hero-badge" style="margin-bottom: 12px; background: rgba(37, 99, 235, 0.08); color: #2563eb; margin-left: auto; margin-right: auto;">
               <span>💬</span> Student Success
@@ -1082,6 +1131,13 @@ export const Landing = {
 
         <!-- Pricing Section -->
         <section id="landing-pricing" class="landing-pricing-section" style="position: relative; overflow: hidden; padding: 80px 24px; max-width: 1000px; margin: 0 auto; border-top: none; scroll-margin-top: 100px; text-align: center; background: transparent;">
+          <div class="floating-deco" style="top: 6%; left: 4%; animation: float-slow 8.9s infinite ease-in-out 0.7s; font-size: 38px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📝</div>
+          <div class="floating-deco" style="top: 50%; right: 5%; animation: float-spin 5.5s infinite ease-in-out 1.5s; font-size: 33px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💻</div>
+          <div class="floating-deco" style="top: 78%; left: 8%; animation: float-slow 7.7s infinite ease-in-out 0.7s; font-size: 43px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">📎</div>
+          <div class="floating-deco" style="top: 18%; right: 8%; animation: float-fast 8.5s infinite ease-in-out 1.8s; font-size: 31px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🔭</div>
+          <div class="floating-deco" style="top: 45%; left: 4%; animation: float-slow 5.5s infinite ease-in-out 3.0s; font-size: 39px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">💡</div>
+          <div class="floating-deco" style="top: 87%; right: 6%; animation: float-slow 6.6s infinite ease-in-out 0.6s; font-size: 32px; position: absolute; pointer-events: none; opacity: 0.12; z-index: 1;">🎒</div>
+
           <div style="text-align: center; margin-bottom: 40px;" class="apple-reveal">
             <div class="hero-badge" style="margin-bottom: 12px; background: rgba(139, 92, 246, 0.08); color: #8b5cf6; margin-left: auto; margin-right: auto;">
               <span>⭐</span> Simple Plans
