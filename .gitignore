@@ -27,3 +27,5 @@ rewrite_*.py
 sidebar_refactor.py
 update_dashboard.py
 users_db.json
+.bundle/
+vendor/
